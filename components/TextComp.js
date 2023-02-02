@@ -11,7 +11,7 @@ export default function TextComp({
 }) {
   return (
     <Text
-      onClick={onPressFunction}
+      onPress={onPressFunction}
       style={{
         fontFamily: family,
         fontSize: size,

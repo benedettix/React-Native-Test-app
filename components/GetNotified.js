@@ -16,6 +16,7 @@ import { colors } from "../styles/base";
 export default function GetNotified() {
   const [msg, setMsg] = React.useState("Your email address has been recieved");
   const [clicked, setClicked] = React.useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.font}>
@@ -45,25 +46,30 @@ export default function GetNotified() {
           width: "100%",
           marginTop: 20,
           marginBottom: 20,
-          position: "relative",
         }}
       >
-        <TextInput
-          style={styles.input}
-          //   onChangeText={onChangeNumber}
-          //   value={number}
+        <View
+          style={{
+            position: "relative",
+          }}
+        >
+          <TextInput
+            style={styles.input}
+            //   onChangeText={onChangeNumber}
+            //   value={number}
 
-          keyboardType="email-address"
-        />
-        <TouchableOpacity style={styles.button}>
-          <TextComp
-            title="Notify Me"
-            color="white"
-            size={16}
-            family={"InterMedium"}
-            onPressFunction={() => setClicked(true)}
+            keyboardType="email-address"
           />
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <TextComp
+              title="Notify Me"
+              color="white"
+              size={16}
+              family={"InterMedium"}
+              onPressFunction={() => setClicked(true)}
+            />
+          </TouchableOpacity>
+        </View>
         {clicked ? (
           <TextComp
             title={msg}
@@ -125,8 +131,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderRadius: 30,
     position: "absolute",
-    top: 5,
-    right: 5,
+    top: 3,
+    right: 3,
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 10,
